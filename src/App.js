@@ -37,17 +37,12 @@ export default function App(){
             textColor="#fff"
             bgColor="#7950f2"
             onClick={handlePrevious}
-            text="Previous"
-            emoji="👈"
-             />
+            ><span>👈</span>Previous</Button>
             <Button
             textColor="#fff"
             bgColor="#7950f2"
             onClick={handleNext}
-            text="Next"
-            emoji="👉"
-             />
-            
+            ><span>👉</span>Next</Button> 
           </div>
         </div>
       )}
