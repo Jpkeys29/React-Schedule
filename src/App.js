@@ -19,7 +19,6 @@ export default function App(){
   }
 
   return (
-    
     <> 
       <button className="close" onClick={() => setIsOpen((isOpen) => !isOpen)}>&times;</button> 
       { isOpen && (
@@ -29,6 +28,8 @@ export default function App(){
             <div className={step >=2 ? "active" : ""}>2</div>
             <div className={step >=3 ? "active" : ""}>3</div>
           </div>
+
+          <StepMessage>{messages[step -1]} </ StepMessage>
 
           <div className="buttons">
             <Button
@@ -48,10 +49,13 @@ export default function App(){
   );
 }
 
-function StepMessage() {
-  <p className="message">
-    <h3>Step {step}</h3>{messages[step - 1]}  
-  </p>;
+function StepMessage({step, children}) {
+  return (
+    <div className="message">
+      <h3>Step {step}</h3>
+      {children}  
+    </div>
+  );
 }
 
 function Button({textColor, bgColor, onClick, children}) {
